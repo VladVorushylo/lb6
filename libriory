@@ -1,0 +1,67 @@
+import sys
+import csv
+import os
+
+class Library():
+    def __init__(self, name, year, author):
+        self.name = name
+        self.year = year
+        self.author = author
+
+    def book(self):
+        print(self.name, self.author, self.year)
+
+b1 = 'Mob Psycho 100 -', 2012, '- ONE'
+b2 = 'Blich -', 2001, '- Тайто Кубо'
+b3 = 'Berserk -', 1989, '- Кэнтаро Миура'
+
+print('Вы вошли в библиотеку')
+while True:
+    print('1. Библиотека\n2. Поиск\n3. Добавить книгу\n4. Удалить книгу\n5. Выйти')
+    choice = int(input())
+    if choice == 1:
+            print(b1)
+            print(b2)
+            print(b3)
+
+    elif choice == 2:
+        while True:
+            found = int(input('1. Поиск по назвию\n2. Поиск по дате\n3. Поиск по автору\n'))
+            if found == 1:
+                choice2 = input('Введите название:')
+                if choice2 == 'Mob Psycho 100':
+                    print('Mob Psycho 100 -', 2012, '- ONE')
+                elif choice2 == 'Blich':
+                    print('Blich -', 2001, '- Тайто Кубо')
+                elif choice2 == 'Berserk':
+                    print('Berserk -', 1989, '- Кэнтаро Миура')
+                else:
+                    print('Такой книги нет')
+            elif found == 2:
+                choice2 = input('Введите дату:')
+                if choice2 == '2012':
+                    print('Mob Psycho 100 -', 2012, '- ONE')
+                elif choice2 == '2001':
+                    print('Blich -', 2001, '- Тайто Кубо')
+                elif choice2 == '1989':
+                    print('Berserk -', 1989, '- Кэнтаро Миура')
+                else:
+                    print('Такой книги нет')
+            elif found == 3:
+                choice2 = input('Введите название:')
+                if choice2 == 'Кэнтаро Миура':
+                    print('Berserk -', 1989, '- Кэнтаро Миура')
+                elif choice2 == 'Тайто Кубо':
+                    print('Blich -', 2001, '- Тайто Кубо')
+                elif choice2 == 'ONE':
+                    print('Mob Psycho 100 -', 2012, '- ONE')
+                else:
+                    print('Такой книги нет')
+    elif choice == 3:
+        print('Добавьте книгу')
+        filename = input()
+        print('Книга была добавлена')
+    elif choice == 4:
+        os.remove('C:\pythonProject\\text.txt')
+    elif choice == 5:
+        break
